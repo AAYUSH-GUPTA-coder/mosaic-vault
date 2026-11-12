@@ -1,0 +1,44 @@
+{
+  "chainId": 31611,
+  "deployer": "0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023",
+  "deployedAt": "2026-11-12T12:42:45.450Z",
+  "contracts": {
+    "CollateralRegistry": "0xa5E0e0b4c80732a39eC6B04f81201EA2eC3b8D71",
+    "ChainlinkFeedOracleAdapter": "0x0Bed54D3A5050B5d5C104C9F49abF7ab5aC1B632",
+    "TestPriceOracle": "0x29eA7fBFE88709d707e95c560B4AA6aAf03eAd14",
+    "MosaicLendingPool": "0xbA75a7a58B381D03DFb78500fD0E0543111a0767",
+    "CollateralVault": "0x55Bce3bF5cC1311eC05A5F0f7E345DC0Df678B87",
+    "MosaicLendingEngine": "0x7875c4A42A59b8B62bd38a07d70850E3f6F7244B",
+    "MosaicLiquidationEngine": "0x2cc16BB09DD1401e8FDD973Fe2fF346Fbe347D20"
+  },
+  "tokens": {
+    "MUSD": "0x118917a40FAF1CD7a13dB0Ef56C86De7973Ac503",
+    "BTC": "0x7b7C000000000000000000000000000000000000",
+    "tWBTC": "0xe06F05D2CD5EA884c28Ebb5ce8887a4924e4d8FD",
+    "tUSD": "0xc4468792Ee9BFECae8603559C485A212Aee86ff1"
+  },
+  "feeds": {
+    "BTC": "0x7b7c000000000000000000000000000000000015"
+  },
+  "txs": {
+    "deploy:CollateralRegistry": "0x2fb5d634ce401e6cbcc18b28cbffa7bebced7de814169d799ea58815928d2a49",
+    "deploy:ChainlinkFeedOracleAdapter": "0x178231c6eaa01903a27db4efbae639d7518a8a6495ce6115c1def8634a32a4c8",
+    "deploy:TestPriceOracle": "0x898b8556c48ce35f5629200a6a8595ceb21329fa8a6a2bebda45ad7c6c9f79ae",
+    "deploy:MosaicLendingPool": "0x9f82b000b533f4834362676763a20d353c7ac0b7476a59c9d0c59d91a4cb6dc6",
+    "deploy:CollateralVault": "0xd07b4513f454acbf14be126f66e54910153f9a0317ecf0810996cae65d238119",
+    "deploy:MosaicLendingEngine": "0x4604ef3e5c2550036358fe2bc2450bae2955118eaab60bbb9030b4f9e1b4b7a1",
+    "deploy:MosaicLiquidationEngine": "0x57cd7c1e53db3e2545a5c1877231355631b5975f3835c6d1bcfc0d1dba944724",
+    "deploy:tWBTC": "0x5dcf08ef37d3650a92ef1faf5fed80508c77cd1d5bd03b1c00b325f62663fc8b",
+    "deploy:tUSD": "0xbcea8600219d3628ca4884d49863aab043d4ea700b2440c215a942d4ea24994c",
+    "role:CollateralVault.ENGINE_ROLE": "0x3cad672e810d132559d00d29c1be8c3314845e46cebf100e0689f195428eaa4e",
+    "role:MosaicLendingPool.ENGINE_ROLE": "0x41198cd04d1c174aadf1612bbca0cdd5455d23d26f77dd3550ed2701f651a358",
+    "role:MosaicLendingEngine.LIQUIDATION_ENGINE_ROLE": "0xc0a7d09d468780694c8dc705a6c11d9d81248760720170e7f69f9a70c638b25a",
+    "role:MosaicLendingPool.LIQUIDITY_PROVIDER_ROLE": "0x9f2e9dcfeef8cd1698e2de45339a00fabfc21ab08acf3785d561a5dd187ffe0c",
+    "feed:setFeed:BTC": "0x608989bd4b9860cc8a779f4c0de363a7785ae416837359f0dcd931a28dc06c34",
+    "oracle:setPrice:tWBTC": "0x837364e42c6dd255f7ccde14bbb463ef87c70232a6520ec4e35ee09df072e230",
+    "oracle:setPrice:tUSD": "0x1596ac0f89b1bc65d39b594835cf54fc9c50f3065af89812d452ba96f9591676",
+    "registry:add:BTC": "0xe6c4e8415759e3513f349a86ac53338dbf72a7647f4e8a03f716f8b14c62d519",
+    "registry:add:tWBTC": "0x1b2c05becd9197eca3abcdbae4f1fb86f509198865be5badb8c198020e4a4fc8",
+    "registry:add:tUSD": "0xdb75a89c547baa107ea0479274e13662aa38fd03193900adb37c880acc8022b2"
+  }
+}

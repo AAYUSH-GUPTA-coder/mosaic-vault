@@ -1,0 +1,135 @@
+1
+00:00:00,100 --> 00:00:04,808
+This is Mosaic Vault, a modular lending layer we built on Mezo testnet.
+
+2
+00:00:04,858 --> 00:00:07,757
+Deposit Bitcoin, or another supported asset,
+
+3
+00:00:07,807 --> 00:00:10,840
+and borrow MUSD without selling what you hold.
+
+4
+00:00:11,890 --> 00:00:14,214
+Every asset gets its own isolated vault.
+
+5
+00:00:14,264 --> 00:00:17,122
+If something goes wrong with one collateral type,
+
+6
+00:00:17,172 --> 00:00:20,980
+the damage stays with that asset and never spreads to the others.
+
+7
+00:00:22,030 --> 00:00:26,311
+The collateral page reads straight from the on-chain registry.
+
+8
+00:00:26,361 --> 00:00:31,690
+Each asset has its own maximum loan-to-value, liquidation threshold, penalty,
+
+9
+00:00:31,740 --> 00:00:33,647
+borrow cap and exposure cap.
+
+10
+00:00:33,697 --> 00:00:37,629
+Real testnet BTC is priced by Mezo's own BTC to USD feed,
+
+11
+00:00:37,679 --> 00:00:41,890
+and the oracle adapter rejects any price that has gone stale.
+
+12
+00:00:42,940 --> 00:00:47,358
+Borrowed MUSD comes from a lending pool that liquidity providers fund.
+
+13
+00:00:47,408 --> 00:00:52,273
+Mosaic never mints MUSD, and it never touches Mezo's native borrowing system.
+
+14
+00:00:52,323 --> 00:00:55,720
+The numbers you see here are read live from the chain.
+
+15
+00:00:56,770 --> 00:00:59,516
+To use it, you connect with Mezo Passport.
+
+16
+00:00:59,566 --> 00:01:03,244
+It supports Bitcoin wallets like Unisat, OKX and Xverse,
+
+17
+00:01:03,294 --> 00:01:05,640
+as well as regular Ethereum wallets.
+
+18
+00:01:06,690 --> 00:01:09,815
+The protocol page shows exposure against every cap,
+
+19
+00:01:09,865 --> 00:01:11,745
+how fresh each oracle price is,
+
+20
+00:01:11,795 --> 00:01:15,045
+and a live scan for positions that can be liquidated.
+
+21
+00:01:15,095 --> 00:01:18,220
+Managers can also pause the engine in an emergency.
+
+22
+00:01:19,270 --> 00:01:23,157
+Risk managers list new assets and tune their parameters here.
+
+23
+00:01:23,207 --> 00:01:25,739
+Every change is an on-chain transaction,
+
+24
+00:01:25,789 --> 00:01:28,450
+and each action is locked to its own role.
+
+25
+00:01:29,500 --> 00:01:32,300
+All of this is deployed on Mezo testnet.
+
+26
+00:01:32,350 --> 00:01:38,073
+We ran the full journey on-chain: fund the pool, deposit, borrow, add collateral,
+
+27
+00:01:38,123 --> 00:01:42,491
+repay, withdraw, and finally a liquidation after a price drop.
+
+28
+00:01:42,541 --> 00:01:46,410
+This is that liquidation, settled on the Mezo explorer.
+
+29
+00:01:47,460 --> 00:01:52,628
+We also borrowed against real testnet BTC, through Mezo's BTC token,
+
+30
+00:01:52,678 --> 00:01:55,390
+then repaid and withdrew it in full.
+
+31
+00:01:56,440 --> 00:02:00,963
+We ran a security review on the contracts and fixed the critical findings,
+
+32
+00:02:01,013 --> 00:02:05,599
+so a liquidation can never write off debt that the collateral still covers.
+
+33
+00:02:05,649 --> 00:02:10,604
+Every contract is linked right here in the footer. Mosaic Vault: more collateral,
+
+34
+00:02:10,654 --> 00:02:13,880
+and more access to Bitcoin-backed liquidity, on Mezo.

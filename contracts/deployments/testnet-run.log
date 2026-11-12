@@ -1,0 +1,594 @@
+=== deploy.ts
+
+
+== Deployer 0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023 on chain 31611 (Mezo testnet)
+  gas balance: 10000000000000000 wei BTC
+
+== External dependencies
+  MUSD: 0x118917a40FAF1CD7a13dB0Ef56C86De7973Ac503 (code ok)
+  BTC: 0x7b7C000000000000000000000000000000000000 (code ok)
+  BTC/USD feed: 0x7b7c000000000000000000000000000000000015 (code ok)
+
+== Core contracts
+  deploy:CollateralRegistry: https://explorer.test.mezo.org/tx/0x2fb5d634ce401e6cbcc18b28cbffa7bebced7de814169d799ea58815928d2a49
+  CollateralRegistry -> https://explorer.test.mezo.org/address/0xa5E0e0b4c80732a39eC6B04f81201EA2eC3b8D71
+  deploy:ChainlinkFeedOracleAdapter: https://explorer.test.mezo.org/tx/0x178231c6eaa01903a27db4efbae639d7518a8a6495ce6115c1def8634a32a4c8
+  ChainlinkFeedOracleAdapter -> https://explorer.test.mezo.org/address/0x0Bed54D3A5050B5d5C104C9F49abF7ab5aC1B632
+  deploy:TestPriceOracle: https://explorer.test.mezo.org/tx/0x898b8556c48ce35f5629200a6a8595ceb21329fa8a6a2bebda45ad7c6c9f79ae
+  TestPriceOracle -> https://explorer.test.mezo.org/address/0x29eA7fBFE88709d707e95c560B4AA6aAf03eAd14
+  deploy:MosaicLendingPool: https://explorer.test.mezo.org/tx/0x9f82b000b533f4834362676763a20d353c7ac0b7476a59c9d0c59d91a4cb6dc6
+  MosaicLendingPool -> https://explorer.test.mezo.org/address/0xbA75a7a58B381D03DFb78500fD0E0543111a0767
+  deploy:CollateralVault: https://explorer.test.mezo.org/tx/0xd07b4513f454acbf14be126f66e54910153f9a0317ecf0810996cae65d238119
+  CollateralVault -> https://explorer.test.mezo.org/address/0x55Bce3bF5cC1311eC05A5F0f7E345DC0Df678B87
+  deploy:MosaicLendingEngine: https://explorer.test.mezo.org/tx/0x4604ef3e5c2550036358fe2bc2450bae2955118eaab60bbb9030b4f9e1b4b7a1
+  MosaicLendingEngine -> https://explorer.test.mezo.org/address/0x7875c4A42A59b8B62bd38a07d70850E3f6F7244B
+  deploy:MosaicLiquidationEngine: https://explorer.test.mezo.org/tx/0x57cd7c1e53db3e2545a5c1877231355631b5975f3835c6d1bcfc0d1dba944724
+  MosaicLiquidationEngine -> https://explorer.test.mezo.org/address/0x2cc16BB09DD1401e8FDD973Fe2fF346Fbe347D20
+
+== Test-only collateral tokens
+  deploy:tWBTC: https://explorer.test.mezo.org/tx/0x5dcf08ef37d3650a92ef1faf5fed80508c77cd1d5bd03b1c00b325f62663fc8b
+  TestCollateralToken -> https://explorer.test.mezo.org/address/0xe06F05D2CD5EA884c28Ebb5ce8887a4924e4d8FD
+  deploy:tUSD: https://explorer.test.mezo.org/tx/0xbcea8600219d3628ca4884d49863aab043d4ea700b2440c215a942d4ea24994c
+  TestCollateralToken -> https://explorer.test.mezo.org/address/0xc4468792Ee9BFECae8603559C485A212Aee86ff1
+
+== Roles
+  role:CollateralVault.ENGINE_ROLE: https://explorer.test.mezo.org/tx/0x3cad672e810d132559d00d29c1be8c3314845e46cebf100e0689f195428eaa4e
+  role:MosaicLendingPool.ENGINE_ROLE: https://explorer.test.mezo.org/tx/0x41198cd04d1c174aadf1612bbca0cdd5455d23d26f77dd3550ed2701f651a358
+  role:MosaicLendingEngine.LIQUIDATION_ENGINE_ROLE: https://explorer.test.mezo.org/tx/0xc0a7d09d468780694c8dc705a6c11d9d81248760720170e7f69f9a70c638b25a
+  CollateralRegistry.RISK_MANAGER_ROLE already granted to 0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023
+  role:MosaicLendingPool.LIQUIDITY_PROVIDER_ROLE: https://explorer.test.mezo.org/tx/0x9f2e9dcfeef8cd1698e2de45339a00fabfc21ab08acf3785d561a5dd187ffe0c
+  MosaicLendingEngine.PAUSER_ROLE already granted to 0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023
+  ChainlinkFeedOracleAdapter.ORACLE_MANAGER_ROLE already granted to 0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023
+  TestPriceOracle.ORACLE_MANAGER_ROLE already granted to 0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023
+
+== Oracle feeds
+  feed:setFeed:BTC: https://explorer.test.mezo.org/tx/0x608989bd4b9860cc8a779f4c0de363a7785ae416837359f0dcd931a28dc06c34
+  live BTC/USD = 72827235330000000000000 (18 dec, updatedAt 1794487315) -> tWBTC seed 7282723533000 (8 dec)
+  oracle:setPrice:tWBTC: https://explorer.test.mezo.org/tx/0x837364e42c6dd255f7ccde14bbb463ef87c70232a6520ec4e35ee09df072e230
+  oracle:setPrice:tUSD: https://explorer.test.mezo.org/tx/0x1596ac0f89b1bc65d39b594835cf54fc9c50f3065af89812d452ba96f9591676
+
+== Register collateral assets
+  registry:add:BTC: https://explorer.test.mezo.org/tx/0xe6c4e8415759e3513f349a86ac53338dbf72a7647f4e8a03f716f8b14c62d519
+  registry:add:tWBTC: https://explorer.test.mezo.org/tx/0x1b2c05becd9197eca3abcdbae4f1fb86f509198865be5badb8c198020e4a4fc8
+  registry:add:tUSD: https://explorer.test.mezo.org/tx/0xdb75a89c547baa107ea0479274e13662aa38fd03193900adb37c880acc8022b2
+  registry now lists 3 assets
+
+== Wrote ~/mosaic-vault/contracts/deployments/mezo-testnet.json
+  next: npx hardhat run scripts/fund-pool.ts --network mezoTestnet
+=== fund-pool.ts
+
+
+== Fund pool 0xbA75a7a58B381D03DFb78500fD0E0543111a0767 with 500 MUSD from 0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023
+  deployer MUSD balance: 600
+  approve pool: https://explorer.test.mezo.org/tx/0x2b218bf66a26354a68637419f3ec56fa1bf066f980ee127858eebc4f5b90db5d
+  depositLiquidity: https://explorer.test.mezo.org/tx/0x24fc8c63a9d3a1b9bd74b706d49d579361a4b2e84ea317811d77827ee3b45a24
+  pool liquidity: 0 -> 500 MUSD
+=== btc-check.ts
+
+
+== BTC 1. Approve BTC precompile -> engine
+  tx approve BTC: https://explorer.test.mezo.org/tx/0x22829e249c4b7de69f218606d13a5a377eb2b7e86bf5756c23a6e091a4ed9545
+
+== BTC 2. Deposit testnet BTC
+  tx addCollateral 0.0005 BTC: https://explorer.test.mezo.org/tx/0xf06af4d91db7e0f7fffbcb659f46106c02a92681b185375efb7a6431e4f5430d
+  collateral 0.0005 BTC ($36.39), price valid=true
+  ok: BTC deposit recorded with a live Mezo BTC/USD price
+
+== BTC 3. Borrow MUSD against BTC
+  tx borrow 10.91 MUSD: https://explorer.test.mezo.org/tx/0xc9197aacfb5727d7305280e29645870bde30d6313a383bef842d75bd5dcfc322
+  debt 10.91 MUSD, HF 2.3333
+
+== BTC 4. Repay all + withdraw all
+ContractFunctionExecutionError: Execution reverted with reason: rpc error: code = Unknown desc = .
+
+Request Arguments:
+  from:  0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023
+  to:    0x7875c4A42A59b8B62bd38a07d70850E3f6F7244B
+  data:  0x22867d780000000000000000000000007b7c000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ 
+Contract Call:
+  address:   0x7875c4A42A59b8B62bd38a07d70850E3f6F7244B
+  function:  repay(address asset, uint256 amount)
+  args:           (0x7b7C000000000000000000000000000000000000, 115792089237316195423570985008687907853269984665640564039457584007913129639935)
+  sender:    0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023
+
+Docs: https://viem.sh/docs/contract/writeContract
+Details: rpc error: code = Unknown desc = execution reverted
+Version: viem@2.57.16
+    at getContractError (~/mosaic-vault/contracts/node_modules/viem/utils/errors/getContractError.ts:84:10)
+    at AsyncFunction.internal (~/mosaic-vault/contracts/node_modules/viem/actions/wallet/writeContract.ts:241:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async wait (~/mosaic-vault/contracts/scripts/btc-check.ts:23:18)
+    at async main (~/mosaic-vault/contracts/scripts/btc-check.ts:48:3) {
+  cause: TransactionExecutionError: Execution reverted with reason: rpc error: code = Unknown desc = .
+  
+  Request Arguments:
+    from:  0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023
+    to:    0x7875c4A42A59b8B62bd38a07d70850E3f6F7244B
+    data:  0x22867d780000000000000000000000007b7c000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  
+  Details: rpc error: code = Unknown desc = execution reverted
+  Version: viem@2.57.16
+      at getTransactionError (~/mosaic-vault/contracts/node_modules/viem/utils/errors/getTransactionError.ts:44:10)
+      at sendTransaction (~/mosaic-vault/contracts/node_modules/viem/actions/wallet/sendTransaction.ts:411:11)
+      ... 3 lines matching cause stack trace ...
+      at async main (~/mosaic-vault/contracts/scripts/btc-check.ts:48:3) {
+    cause: ExecutionRevertedError: Execution reverted with reason: rpc error: code = Unknown desc = .
+    
+    Details: rpc error: code = Unknown desc = execution reverted
+    Version: viem@2.57.16
+        at getNodeError (~/mosaic-vault/contracts/node_modules/viem/utils/errors/getNodeError.ts:82:12)
+        at <anonymous> (~/mosaic-vault/contracts/node_modules/viem/utils/errors/getTransactionError.ts:37:19)
+        at getTransactionError (~/mosaic-vault/contracts/node_modules/viem/utils/errors/getTransactionError.ts:43:5)
+        at sendTransaction (~/mosaic-vault/contracts/node_modules/viem/actions/wallet/sendTransaction.ts:411:11)
+        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+        at async AsyncFunction.internal (~/mosaic-vault/contracts/node_modules/viem/actions/wallet/writeContract.ts:230:14)
+        at async wait (~/mosaic-vault/contracts/scripts/btc-check.ts:23:18)
+        at async main (~/mosaic-vault/contracts/scripts/btc-check.ts:48:3) {
+      details: 'rpc error: code = Unknown desc = execution reverted',
+      docsPath: undefined,
+      metaMessages: undefined,
+      shortMessage: 'Execution reverted with reason: rpc error: code = Unknown desc = .',
+      version: '2.57.16',
+      [cause]: [InvalidInputRpcError]
+    },
+    details: 'rpc error: code = Unknown desc = execution reverted',
+    docsPath: undefined,
+    metaMessages: [
+      'Request Arguments:',
+      '  from:  0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023\n' +
+        '  to:    0x7875c4A42A59b8B62bd38a07d70850E3f6F7244B\n' +
+        '  data:  0x22867d780000000000000000000000007b7c000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'
+    ],
+    shortMessage: 'Execution reverted with reason: rpc error: code = Unknown desc = .',
+    version: '2.57.16'
+  },
+  details: 'rpc error: code = Unknown desc = execution reverted',
+  docsPath: '/docs/contract/writeContract',
+  metaMessages: [
+    'Request Arguments:',
+    '  from:  0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023\n' +
+      '  to:    0x7875c4A42A59b8B62bd38a07d70850E3f6F7244B\n' +
+      '  data:  0x22867d780000000000000000000000007b7c000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
+    ' ',
+    'Contract Call:',
+    '  address:   0x7875c4A42A59b8B62bd38a07d70850E3f6F7244B\n' +
+      '  function:  repay(address asset, uint256 amount)\n' +
+      '  args:           (0x7b7C000000000000000000000000000000000000, 115792089237316195423570985008687907853269984665640564039457584007913129639935)\n' +
+      '  sender:    0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023'
+  ],
+  shortMessage: 'Execution reverted with reason: rpc error: code = Unknown desc = .',
+  version: '2.57.16',
+  abi: [
+    {
+      inputs: [Array],
+      stateMutability: 'nonpayable',
+      type: 'constructor'
+    },
+    { inputs: [], name: 'AccessControlBadConfirmation', type: 'error' },
+    {
+      inputs: [Array],
+      name: 'AccessControlUnauthorizedAccount',
+      type: 'error'
+    },
+    { inputs: [Array], name: 'AssetNotActive', type: 'error' },
+    { inputs: [], name: 'BelowMinDeposit', type: 'error' },
+    { inputs: [], name: 'EnforcedPause', type: 'error' },
+    { inputs: [], name: 'ExceedsBorrowCap', type: 'error' },
+    { inputs: [], name: 'ExceedsExposureCap', type: 'error' },
+    { inputs: [], name: 'ExceedsMaxLtv', type: 'error' },
+    { inputs: [], name: 'ExpectedPause', type: 'error' },
+    { inputs: [], name: 'InsufficientCollateral', type: 'error' },
+    { inputs: [], name: 'InsufficientPoolLiquidity', type: 'error' },
+    { inputs: [], name: 'InvalidParameters', type: 'error' },
+    { inputs: [], name: 'NoDebt', type: 'error' },
+    { inputs: [Array], name: 'OraclePriceInvalid', type: 'error' },
+    { inputs: [], name: 'ReentrancyGuardReentrantCall', type: 'error' },
+    {
+      inputs: [Array],
+      name: 'SafeERC20FailedOperation',
+      type: 'error'
+    },
+    { inputs: [], name: 'UnsafeWithdrawal', type: 'error' },
+    { inputs: [], name: 'ZeroAmount', type: 'error' },
+    {
+      anonymous: false,
+      inputs: [Array],
+      name: 'Borrowed',
+      type: 'event'
+    },
+    {
+      anonymous: false,
+      inputs: [Array],
+      name: 'CollateralAdded',
+      type: 'event'
+    },
+    {
+      anonymous: false,
+      inputs: [Array],
+      name: 'CollateralWithdrawn',
+      type: 'event'
+    },
+    {
+      anonymous: false,
+      inputs: [Array],
+      name: 'Paused',
+      type: 'event'
+    },
+    {
+      anonymous: false,
+      inputs: [Array],
+      name: 'PositionLiquidated',
+      type: 'event'
+    },
+    {
+      anonymous: false,
+      inputs: [Array],
+      name: 'PositionOpened',
+      type: 'event'
+    },
+    {
+      anonymous: false,
+      inputs: [Array],
+      name: 'Repaid',
+      type: 'event'
+    },
+    {
+      anonymous: false,
+      inputs: [Array],
+      name: 'RoleAdminChanged',
+      type: 'event'
+    },
+    {
+      anonymous: false,
+      inputs: [Array],
+      name: 'RoleGranted',
+      type: 'event'
+    },
+    {
+      anonymous: false,
+      inputs: [Array],
+      name: 'RoleRevoked',
+      type: 'event'
+    },
+    {
+      anonymous: false,
+      inputs: [Array],
+      name: 'Unpaused',
+      type: 'event'
+    },
+    {
+      inputs: [],
+      name: 'DEFAULT_ADMIN_ROLE',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [],
+      name: 'LIQUIDATION_ENGINE_ROLE',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [],
+      name: 'PAUSER_ROLE',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'addCollateral',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'borrow',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'getAssetDebt',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'getBorrowingCapacity',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'getCollateralValue',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'getHealthFactor',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'getLiquidationPrice',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'getOutstandingDebt',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'getPosition',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'getPositionView',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'getRoleAdmin',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'grantRole',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'hasRole',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'liquidatePosition',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    },
+    {
+      inputs: [],
+      name: 'musd',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'openPosition',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    },
+    {
+      inputs: [],
+      name: 'pause',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    },
+    {
+      inputs: [],
+      name: 'paused',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [],
+      name: 'pool',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [],
+      name: 'registry',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'renounceRole',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'repay',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'repayOnBehalf',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'revokeRole',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'supportsInterface',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [],
+      name: 'unpause',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    },
+    {
+      inputs: [],
+      name: 'vault',
+      outputs: [Array],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [Array],
+      name: 'withdrawCollateral',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    }
+  ],
+  args: [
+    '0x7b7C000000000000000000000000000000000000',
+    115792089237316195423570985008687907853269984665640564039457584007913129639935n
+  ],
+  contractAddress: '0x7875c4A42A59b8B62bd38a07d70850E3f6F7244B',
+  formattedArgs: undefined,
+  functionName: 'repay',
+  sender: '0xb2de1dc8f5cbaeea3e08a67d45c2250fdb860023'
+}
+=== btc-check.ts (rerun)
+
+
+== BTC 1. Approve BTC precompile -> engine
+
+== BTC 2. Deposit testnet BTC
+  collateral 0.0005 BTC ($36.4), price valid=true
+  ok: BTC deposit recorded with a live Mezo BTC/USD price
+
+== BTC 3. Borrow MUSD against BTC
+  debt 10.91 MUSD, HF 2.3341
+
+== BTC 4. Repay all + withdraw all
+  tx approve MUSD: https://explorer.test.mezo.org/tx/0xe0f9d0d2308776800182d370ebbf95df27258783f33e1437ed489101056dfdfd
+  tx repay all: https://explorer.test.mezo.org/tx/0xbd96bc35e318f54c35d2a0944afbeb045773007cb0fadd35ab82f19bae7db964
+  tx withdraw all BTC: https://explorer.test.mezo.org/tx/0xe63061fe8cae12251a5a54265b444916559d171156aaee652bb4b5d0817b8385
+  ok: BTC position closed
+
+BTC check complete.
+=== demo-flow.ts (rerun)
+
+  ok: tWBTC oracle price valid (72827.23 USD)
+
+== Approvals
+  tx approve tWBTC -> engine: https://explorer.test.mezo.org/tx/0x978d181d140ded11e131122b79758a02c5b74f6edbfc44fbf7ebe24dac49f950
+
+== 1. Faucet tWBTC
+  tx faucet 0.02 tWBTC: https://explorer.test.mezo.org/tx/0xe91ada0e41f27e4a2de19c9c10215e535511f78e454e77715f0ead6ad902af8d
+  ok: wallet holds >= 0.02 tWBTC
+
+== 2. Deposit collateral
+  tx addCollateral 0.005 tWBTC: https://explorer.test.mezo.org/tx/0xd77611e5ef1c621ac6a88fe502cf8441278ca42663a1996b8a93bb1e12b56eac
+  after deposit: collateral 0.005 tWBTC ($364.13), debt 0 MUSD, HF inf (no debt), LTV 0%, canBorrow 218.48, price $72827.23 valid=true
+  ok: collateral credited exactly
+  ok: vault accounting matches
+  ok: no debt => HF infinite
+
+== 3. Borrow MUSD
+  tx borrow 109.24 MUSD: https://explorer.test.mezo.org/tx/0x3bb360a001182d4fcf4c262ece89532b35651fa627f310b816c65a85b6ac1d66
+  after borrow: collateral 0.005 tWBTC ($364.13), debt 109.24 MUSD, HF 2.3333, LTV 30%, canBorrow 109.24, price $72827.23 valid=true
+  ok: debt recorded
+  ok: MUSD received
+  ok: position healthy
+
+== 4. Add collateral
+  tx addCollateral 0.0025 tWBTC: https://explorer.test.mezo.org/tx/0x65ad293c3210ac4d4e26630b42c3fa97a4514e073c51cbed0c8744dc1bd07785
+  after add: collateral 0.0075 tWBTC ($546.2), debt 109.24 MUSD, HF 3.5, LTV 20%, canBorrow 218.48, price $72827.23 valid=true
+  ok: collateral increased
+  ok: HF improved (2.3333 -> 3.5)
+
+== 5. Partial repay
+  tx repay 54.62 MUSD: https://explorer.test.mezo.org/tx/0x28293d6a0bbe28737d6da191ed5163f8f304118a6db7162cc03fcf13b6c6a83c
+  ok: debt reduced by exactly the repaid amount
+  after repay: collateral 0.0075 tWBTC ($546.2), debt 54.62 MUSD, HF 7, LTV 10%, canBorrow 273.1, price $72827.23 valid=true
+
+== 6. Safe withdraw
+  tx withdrawCollateral 0.006224 tWBTC: https://explorer.test.mezo.org/tx/0xba5c881e4f313be9ef2aae7df1dbf24144d86d0e2bcf3f07915609559d12ced0
+  after withdraw: collateral 0.001275 tWBTC ($92.85), debt 54.62 MUSD, HF 1.19, LTV 58.82%, canBorrow 1.09, price $72827.23 valid=true
+  ok: collateral reduced
+  ok: still safe after withdrawal
+
+== 7. Close position 1
+  tx repay remaining: https://explorer.test.mezo.org/tx/0xb308b6f632d1b223db54b5469669f54564f7af9111c6a2974eccbfd36349b4a4
+  tx withdraw remaining: https://explorer.test.mezo.org/tx/0x63f42c864897fc3b7c7d0c354294d4e7681e9d991e570f1d131ac19a2c1fe565
+  ok: position 1 closed
+
+== 8. Liquidation demo on a separate position
+  tx openPosition deposit 0.005 tWBTC: https://explorer.test.mezo.org/tx/0x77960b2e495b41772544154b494061438fe2aa2ac07d4b7e18a7bd1627530892
+  tx borrow 218.48 MUSD (max LTV): https://explorer.test.mezo.org/tx/0x153418db54c1ec2f0b9b5bea861051cbd8c718f0eab1a0de28b714ee8011d38b
+  position 2: collateral 0.005 tWBTC ($364.13), debt 218.48 MUSD, HF 1.1666, LTV 60%, canBorrow 0, price $72827.23 valid=true
+  ok: position 2 is healthy before the price drop
+  tx setPrice tWBTC -> $59302.17: https://explorer.test.mezo.org/tx/0xa1e0f9ce1cbd5a253b5c5e73e65924aa6a2c4d8f4d7fa4bbb233c861690e18d1
+  after price drop: collateral 0.005 tWBTC ($296.51), debt 218.48 MUSD, HF 0.9499, LTV 73.68%, canBorrow 0, price $59302.17 valid=true
+  ok: HF < 1
+  ok: isLiquidatable == true
+  ok: quote: repay 218.48 MUSD, seize 0.003978 tWBTC
+  tx liquidate (same wallet acts as liquidator): https://explorer.test.mezo.org/tx/0x23212465d87a2a7f74f1c137c80642ccb8331b48ac24d047f2474f342f73cac5
+  after liquidation: collateral 0.001021 tWBTC ($60.55), debt 0 MUSD, HF inf (no debt), LTV 0%, canBorrow 36.33, price $59302.17 valid=true
+  ok: debt cleared
+  ok: liquidator received seized collateral
+  ok: pool received repayment
+  ok: double liquidation impossible (not liquidatable)
+
+== 9. Restore price
+  tx setPrice tWBTC -> $72827.23: https://explorer.test.mezo.org/tx/0x2fef2d27aa51662620ed88096a15c750a80521af352a78932a419239bcb2ea07
+  ok: price restored
+  tx withdraw leftover collateral: https://explorer.test.mezo.org/tx/0xb4d3adb4487383bc49d1e0a6dce34a83f893d9a0d3c789e9555c2f2761eb9e2f
+
+== 10. Reopen a healthy position for the UI
+  tx openPosition 0.005 tWBTC + borrow: https://explorer.test.mezo.org/tx/0x272ab30254a782b4489368148fb37d97d18e5f9abe40518f2ec0ec303b9abfdd
+  tx borrow 72.82 MUSD: https://explorer.test.mezo.org/tx/0x31ec522546eed70d83d753a8173c00e547540f871bd5faf61f7f00be7bc8af13
+  final: collateral 0.005 tWBTC ($364.13), debt 72.82 MUSD, HF 3.5, LTV 20%, canBorrow 145.65, price $72827.23 valid=true
+
+== Invariants
+  ok: vault balance >= accounting
+  ok: pool liquidity == MUSD balance
+
+Demo flow complete.
+=== extend-test-prices.ts (rerun)
+
+  tx tWBTC refresh price: https://explorer.test.mezo.org/tx/0x5028069fd57455903e6f481936a3b374279aeb12db8e59ae051577df3d599095
+  tx tWBTC max staleness 30d: https://explorer.test.mezo.org/tx/0x080691e87bc657ac1e697a36c2f259119d2ffc85a37a34da9b74c8f393954256
+  tx tUSD refresh price: https://explorer.test.mezo.org/tx/0x822ace2bb0dfd7d68586668e735448b92a252d89281b29d910fb5cacb6181081
+  tx tUSD max staleness 30d: https://explorer.test.mezo.org/tx/0xa8af3ef8006accf979c7cff3f539e5125d8052281a28dea8e6de01fbad5d55f5
+=== refund-btc.ts
+
+  refunded 0.00999999782042828 BTC to the funding wallet: https://explorer.test.mezo.org/tx/0x08443390cae210a950689a7e2bac563d865f9cc935da938588d93395599b7c77
+  deployer left with 3.066e-12 BTC
